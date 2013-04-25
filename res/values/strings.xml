@@ -438,4 +438,7 @@ CHAR LIMIT = NONE] -->
     <!-- Positive answer for first run dialog asking if the user wants to remember photo locations [CHAR LIMIT = 20] -->
     <string name="remember_location_yes">Yes</string>
 
+    <!-- Smart Capture -->
+    <string name="pref_smart_capture_title">Smart Capture</string>
+
 </resources>
