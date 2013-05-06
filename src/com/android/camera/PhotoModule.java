@@ -962,7 +962,6 @@ public class PhotoModule
 
     private void updateCustomSettings() {
         mActivity.initPowerShutter(mPreferences);
-        mActivity.initStoragePrefs(mPreferences);
         mActivity.initSmartCapture(mPreferences);
         if (mActivity.mSmartCapture) {
             startSmartCapture();
