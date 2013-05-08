@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2012-2013 The CyanogenMod Project
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -12,9 +12,8 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
- -->
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="pref_camera_picturesize_entry_13mp">13 megapixel</string>
     <string name="pref_camera_picturesize_entry_12_8mp">12,8 megapixel</string>
     <string name="pref_camera_picturesize_entry_11_5mp">11,5 megapixel</string>
@@ -105,4 +104,14 @@
     <string name="pref_camera_focustime_entry_30">30 mp</string>
     <string name="pref_camera_focustime_entry_infinite">Végtelen</string>
     <string name="pref_camera_storage_title">Mentés helye</string>
+    <string name="pref_camera_nohands_title">Kéznélküli mód</string>
+    <string name="pref_camera_timer_entry_0">Ki</string>
+    <string name="pref_camera_timer_entry_10">10 mp</string>
+    <string name="pref_camera_timer_entry_20">20 mp</string>
+    <string name="pref_camera_timer_entry_30">30 mp</string>
+    <string name="pref_camera_timer_entry_40">40 mp</string>
+    <string name="pref_camera_timer_entry_50">50 mp</string>
+    <string name="pref_camera_timer_entry_60">60 mp</string>
+    <string name="voice_hint">Készítsen képet a távolból, magadott szavak kimondásával: Használhatja a \"Cid\", \'Whisky\", és természetesen a \"Cheese!\" szavakat</string>
+    <string name="pref_nohands_persistent_title">Állandó kéznélküli mód</string>
 </resources>
