@@ -166,6 +166,8 @@ public class VideoModule implements CameraModule,
     private boolean mQuickCapture;
 
     private SensorManager mSensorManager;
+    private boolean mSensorIsRegistered = false;
+
     private long mLastVid = 0;
 
     private MediaRecorder mMediaRecorder;
@@ -1977,16 +1979,21 @@ public class VideoModule implements CameraModule,
     }
 
     private void startSmartCapture() {
-        mSensorManager = mActivity.getSensorManager();
-        mSensorManager.registerListener(this,
-                mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
-                SensorManager.SENSOR_DELAY_UI);
+        if (!mSensorIsRegistered) {
+            mSensorIsRegistered = true;
+            mSensorManager = mActivity.getSensorManager();
+            mSensorManager.registerListener(this,
+                    mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
+                    SensorManager.SENSOR_DELAY_UI);
+        }
     }
 
     private void stopSmartCapture() {
-        if (mSensorManager != null) {
+        if (mSensorManager != null && mSensorIsRegistered) {
+            mSensorIsRegistered = false;
             mSensorManager.unregisterListener(this,
                     mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY));
+            mSensorManager = null;
         }
     }
 
