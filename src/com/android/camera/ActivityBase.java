@@ -425,10 +425,11 @@ public abstract class ActivityBase extends AbstractGalleryActivity
         data.putParcelable(PhotoPage.KEY_APP_BRIDGE, mAppBridge);
         if (getStateManager().getStateCount() == 0) {
             getStateManager().startState(PhotoPage.class, data);
+        } else {
+            getStateManager().switchState(getStateManager().getTopState(),
+                    PhotoPage.class, data);
         }
-        if (mAppBridge.getCameraScreenNail() != null) {
-            mCameraScreenNail = mAppBridge.getCameraScreenNail();
-        }
+        mCameraScreenNail = mAppBridge.getCameraScreenNail();
         return mCameraScreenNail;
     }
 
@@ -460,9 +461,7 @@ public abstract class ActivityBase extends AbstractGalleryActivity
         } else {
             getStateManager().startStateNow(PhotoPage.class, data);
         }
-        if (mAppBridge.getCameraScreenNail() != null) {
-            mCameraScreenNail = mAppBridge.getCameraScreenNail();
-        }
+        mCameraScreenNail = mAppBridge.getCameraScreenNail();
         return mCameraScreenNail;
     }
 
