@@ -80,6 +80,7 @@ public class CameraSettings {
     public static final String KEY_NOHANDS_MODE = "pref_nohands_shutter_key";
     public static final String KEY_PERSISTENT_NOHANDS = "pref_nohands_persistent_key";
     public static final String KEY_VIDEO_HDR = "pref_video_hdr_key";
+    public static final String KEY_SHUTTER_SPEED = "pref_shutter_speed_key";
 
     public static final String EXPOSURE_DEFAULT_VALUE = "0";
     public static final String VALUE_ON = "on";
@@ -193,6 +194,7 @@ public class CameraSettings {
         ListPreference videoColorEffect = group.findPreference(KEY_VIDEOCAMERA_COLOR_EFFECT);
         ListPreference storage = group.findPreference(KEY_STORAGE);
         ListPreference videoHdr = group.findPreference(KEY_VIDEO_HDR);
+        ListPreference shutterSpeed = group.findPreference(KEY_SHUTTER_SPEED);
 
         // Since the screen could be loaded from different resources, we need
         // to check if the preference is available here
@@ -270,6 +272,9 @@ public class CameraSettings {
         if (videoHdr != null &&
             !Util.isVideoHdrSupported(mParameters)) {
             removePreference(group, videoHdr.getKey());
+        }
+        if (shutterSpeed != null && !Util.isShutterSpeedSupported(mParameters)) {
+            removePreference(group, shutterSpeed.getKey());
         }
     }
 
